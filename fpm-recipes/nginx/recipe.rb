@@ -10,8 +10,8 @@ class Nginx < FPM::Cookery::Recipe
 
   section 'httpd'
 
-  build_depends 'libpcre3-dev', 'zlib1g-dev', 'libssl-dev (<< 1.0.0)'
-  depends 'libpcre3', 'zlib1g', 'libssl0.9.8'
+  build_depends 'build-essential', 'git', 'libgeoip-dev', 'libpcre3-dev', 'zlib1g-dev', 'libssl-dev (<< 1.0.0)', 'libgd2-noxpm-dev', 'libperl-dev'
+  depends 'libpcre3', 'zlib1g', 'libssl0.9.8', 'libgeoip1', 'libgd2-noxpm-dev'
 
   provides 'nginx-full', 'nginx-common'
   replaces 'nginx-full', 'nginx-common'
