@@ -3,7 +3,7 @@ class Nginx < FPM::Cookery::Recipe
 
   name 'nginx'
   version '1.8.0'
-  revision 2
+  revision 3
   homepage 'http://nginx.org/'
   source "http://nginx.org/download/nginx-#{version}.tar.gz"
   sha256 '23cca1239990c818d8f6da118320c4979aadf5386deda691b1b7c2c96b9df3d5'
@@ -25,8 +25,8 @@ class Nginx < FPM::Cookery::Recipe
   def build
     safesystem "git clone https://github.com/octohost/ngx_txid.git #{builddir}/ngx_txid"
     safesystem "git clone https://github.com/pagespeed/ngx_pagespeed.git #{builddir}/ngx_pagespeed"
-    safesystem "cd #{builddir}/ngx_pagespeed/ && curl -LO https://dl.google.com/dl/page-speed/psol/1.9.32.3.tar.gz"
-    safesystem "cd #{builddir}/ngx_pagespeed/ && tar -zxf 1.9.32.3.tar.gz"
+    safesystem "cd #{builddir}/ngx_pagespeed/ && curl -LO https://dl.google.com/dl/page-speed/psol/1.9.32.6.tar.gz"
+    safesystem "cd #{builddir}/ngx_pagespeed/ && tar -zxf 1.9.32.6.tar.gz"
     configure \
       '--sbin-path=/usr/sbin/nginx',
       '--with-http_stub_status_module',
